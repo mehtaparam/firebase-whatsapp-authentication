@@ -36,6 +36,10 @@ To run this project, you will need to add the following environment variables to
 - Node Middleware for Secret Key Validations
 - Node CORS > Cross Origin Handling
 
+## Demo
+
+![](https://gituploads.codingmantra.com/wa-athenticator.gif)
+
 ## API Reference
 
 ### Initiate Auth Request and Send Message
