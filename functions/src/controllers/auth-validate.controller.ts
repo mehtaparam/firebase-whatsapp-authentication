@@ -15,6 +15,9 @@ export const validateOTPRequest= async (req: any): Promise<any> => {
             await sendSuccessWAMessage(storedData?.contact);
             return {
                 status:true,
+                data:{
+                    authId:req.id
+                },
                 code: HTTP_REPONSE_STATUS.SUCCESS,
                 message: HTTP_REPONSE_STATUS_MESSAGE.SUCCESS
             }
