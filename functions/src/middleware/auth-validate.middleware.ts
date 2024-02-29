@@ -5,9 +5,11 @@ import { decryptToken } from '../helpers/token.helper';
 // Middleware to authenticate user based on the token
 export const authValidateMiddleware = async (req: any, res: Response, next: NextFunction) => {
     const body = req.body;
-    if (body.token && body.otp) {
+    const token = req.headers.authorization?.split(' ')[1] ?? body.token;
+
+    if (token && body.otp) {
         try {
-            const data = decryptToken(body.token);
+            const data = decryptToken(token);
             req.id = data.id
             return next();
         } catch (error) {
